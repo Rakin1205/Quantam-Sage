@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en"> 
+ <head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+  <title>Sign Up</title> 
+ </head> 
+ <body> 
+  <div class="container"> 
+   <div class="title">
+    Sign Up
+   </div> 
+   <form id="signupForm" onsubmit="return validateSignup()"> 
+    <div class="input-group"> <label for="firstName">First Name</label> 
+     <input type="text" id="firstName" name="firstName" required> 
+    </div> 
+    <div class="input-group"> <label for="lastName">Last Name</label> 
+     <input type="text" id="lastName" name="lastName" required> 
+    </div> 
+    <div class="input-group"> <label for="email">Email</label> 
+     <input type="email" id="email" name="email" required> 
+    </div> 
+    <div class="input-group"> <label for="password">Password</label> 
+     <input type="password" id="password" name="password" required> 
+    </div> 
+    <div class="input-group"> <label for="confirmPassword">Confirm Password</label> 
+     <input type="password" id="confirmPassword" name="confirmPassword" required> 
+    </div> <button class="btn" type="submit">Sign Up</button> 
+   </form> 
+   <p class="login-link">Already have an account? <a href="login.html">Log In</a></p> 
+  </div> 
+ </body>
+ <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+      padding: 40px;
+      width: 300px;
+      text-align: center;
+    }
+
+    .title {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+    }
+
+    .input-group label {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .btn {
+      background-color: #007bff;
+      color: #ffffff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+    }
+
+    .login-link {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+ </style>
+ <script>
+    function validateSignup() {
+      var firstName = document.getElementById("firstName").value;
+      var lastName = document.getElementById("lastName").value;
+      var email = document.getElementById("email").value;
+      var password = document.getElementById("password").value;
+      var confirmPassword = document.getElementById("confirmPassword").value;
+
+      if (password !== confirmPassword) {
+        alert("Passwords do not match");
+        return false;
+      }
+
+      // Simulate saving user data to a text file (for demonstration purposes)
+      var userData = {
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        password: password
+      };
+      var userDataText = JSON.stringify(userData, null, 2);
+
+      // Simulate redirection after successful sign-up
+      window.location.href = "https://www.wikipedia.org";
+
+      return false; // Prevent form submission for this example
+    }
+ </script>
+</html>
