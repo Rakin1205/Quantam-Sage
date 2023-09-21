@@ -19,9 +19,9 @@ fetch('intents.json')
 const createChatLi = (message, className) => {
     const chatLi = document.createElement("li");
     chatLi.classList.add("chat", `${className}`);
-    let chatContent = className === "outgoing" ? `<p></p>` : `<p></p>`;
+    let chatContent = className === "outgoing" ? `<pre></pre>` : `<pre></pre>`;
     chatLi.innerHTML = chatContent;
-    chatLi.querySelector("p").textContent = message;
+    chatLi.querySelector("pre").textContent = message;
     return chatLi;
 }
 
